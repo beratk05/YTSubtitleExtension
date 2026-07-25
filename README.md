@@ -26,4 +26,4 @@ The extension is now installed and active!
 3. A small popup will appear showing the translation. 
 
 ## License
-[MIT](https://choosealicense.com/licenses/mit/)
+[GNU General Public License v3.0 (GPLv3)](https://choosealicense.com/licenses/gpl-3.0/)
