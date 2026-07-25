@@ -1,6 +1,6 @@
 # YouTube Translator Extension
 
-A lightweight browser extension that translates YouTube subtitles instantly. Just click on any word in the YouTube closed captions (CC), and it will pop up the English meaning right there on the video!
+A lightweight browser extension that translates YouTube subtitles instantly. Useful while language learning. Just click on any word in the YouTube closed captions (CC), and it will pop up the English meaning right there on the video!
 
 ## How to Install (Manual Installation)
 
