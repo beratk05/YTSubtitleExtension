@@ -1,0 +1,162 @@
+/* Subtitle Word Styling */
+.clickable-word {
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  transition: all 0.15s ease;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.3);
+  padding: 0 1px;
+}
+
+.clickable-word:hover {
+  background-color: rgba(56, 189, 248, 0.25); /* Cyan / Light blue highlight */
+  color: #38bdf8 !important;
+  border-bottom-color: #38bdf8;
+  border-radius: 3px;
+  transform: scale(1.05);
+}
+
+/* Tooltip Container */
+.translation-tooltip {
+  position: absolute;
+  z-index: 2147483647; /* Maximum possible z-index to stay above YouTube controls */
+  background: rgba(22, 22, 26, 0.88);
+  backdrop-filter: blur(12px) saturate(160%);
+  -webkit-backdrop-filter: blur(12px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 9px;
+  padding: 11px 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  font-family: 'Roboto', Arial, sans-serif;
+  color: #ffffff;
+  pointer-events: auto;
+  opacity: 0;
+  transform: translateY(5px);
+  animation: tooltip-fade-in 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  user-select: none;
+  min-width: 154px;
+  max-width: 308px;
+  box-sizing: border-box;
+}
+
+@keyframes tooltip-fade-in {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Tooltip Arrow */
+.tooltip-arrow {
+  position: absolute;
+  bottom: -6px;
+  width: 11px;
+  height: 11px;
+  background: #16161a; /* Solid color matches the blended dark tooltip */
+  border-right: 1px solid rgba(255, 255, 255, 0.15);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  transform: rotate(45deg);
+  transform-origin: center;
+  margin-left: -6px;
+}
+
+/* Tooltip Content Elements */
+.tooltip-content {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.tooltip-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 6px;
+}
+
+.tooltip-german-word {
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.7);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 198px;
+}
+
+.tooltip-translation-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.tooltip-translation {
+  font-size: 18px;
+  font-weight: 700;
+  color: #4ade80; /* Premium emerald-green translation */
+  word-wrap: break-word;
+  line-height: 1.3;
+}
+
+/* Action Buttons Container */
+.tooltip-actions {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.tooltip-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.tooltip-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  transform: scale(1.1);
+}
+
+.tooltip-btn:active {
+  transform: scale(0.95);
+}
+
+/* Helper styles for SVG icons inside buttons */
+.tooltip-btn svg {
+  width: 15px;
+  height: 15px;
+  fill: currentColor;
+}
+
+/* Spinner for Loading State */
+.tooltip-loading {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.7);
+  padding: 4px 0;
+}
+
+.tooltip-spinner {
+  width: 13px;
+  height: 13px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-top-color: #4ade80;
+  border-radius: 50%;
+  animation: tooltip-spin 0.8s linear infinite;
+}
+
+@keyframes tooltip-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
